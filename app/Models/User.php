@@ -40,4 +40,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Models\Role');
     }
+
+    //Método para verificar se usuário possui algum cargo
+    public function hasAnyRole(string $role)
+    {
+        return null !== $this->roles()->where('name', $role)->first();
+    }
 }

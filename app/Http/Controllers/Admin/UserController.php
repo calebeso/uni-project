@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate as FacadesGate;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -17,10 +19,17 @@ class UserController extends Controller
     }
 
 
-    public function index(Request $request)
+    public function index()
     {
         $users = $this->user->latest('id')->paginate();
-        return view('admin.users.index', compact('users'));
+
+        if(FacadesGate::allows('is-admin'))
+        {
+            return view('admin.users.index', compact('users'));
+        }else
+        {
+            return redirect()->back();
+        }
     }
 
     public function create()
