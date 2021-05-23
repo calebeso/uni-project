@@ -73,7 +73,7 @@ class UserController extends Controller
 
         $data->roles()->sync($request->roles);
 
-        return redirect(route('admin.users.index'));
+        return redirect(route('admin.users.index'))->with('status', 'Usuário criado com sucesso!');
     }
 
 
@@ -137,6 +137,6 @@ class UserController extends Controller
 
         $user->roles()->sync($request->roles);
 
-        return redirect(route('admin.users.index'));
+        return redirect(route('admin.users.index'))->with('status', 'Usuário atualizado com sucesso!');
     }
 }
