@@ -1,7 +1,6 @@
 
-![uniamerica](https://user-images.githubusercontent.com/53923521/119270727-75474d00-bbd4-11eb-9e47-f503c9f2026c.png)
 
-## UniAmérica
+## Sistema de Gerenciamento Educacional
 
 Projeto de gerenciamento de sistema educacional, sendo possível consultar, cadastrar, editar, visualizar e excluir Usuários, Cursos e Alunos. 
 Também é possível exportar a lista de alunos para Excel, antes ou depois de aplicar uma consulta. O sistema conta com pacotes de validações de documentos, 
@@ -23,6 +22,15 @@ Gere uma chave para aplicação através do comando:
 Crie a estrutura do banco de dados com os seus devidos dados padrões já populados através do comando: 
 
 `php artisan migrate --seed`
+
+Para rodar o projeto, use o comando: 
+
+`php artisan serve`
+
+## Usuário Padrão
+
+Login : admin
+Senha : password
 
 ## Autor
 
