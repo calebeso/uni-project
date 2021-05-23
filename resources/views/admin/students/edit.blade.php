@@ -45,13 +45,13 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="cpf">CPF</label>
-                                <input id="cpf" name="cpf" type="text" class="form-control" placeholder="CPF:" value="{{ $student->cpf ?? old('cpf') }}">
+                                <input id="cpf" name="cpf" type="text" class="form-control cpf" placeholder="CPF:" value="{{ $student->cpf ?? old('cpf') }}">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="phone">Celular</label>
-                                <input id="phone" name="phone" type="text" class="form-control" placeholder="Celular:" value="{{ $student->phone ?? old('phone') }}">
+                                <input id="phone" name="phone" type="text" class="form-control phone" placeholder="Celular:" value="{{ $student->phone ?? old('phone') }}">
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="birth_date">Data de Nascimento</label>
-                                <input id="birth_date" name="birth_date" type="date" class="form-control" placeholder="Nome:" value="{{ $student->birth_date ?? old('birth_date') }}">
+                                <input id="birth_date" name="birth_date" type="text" class="form-control date" placeholder="Nome:" value="{{ $student->birth_date ?? old('birth_date') }}">
                             </div>
                         </div>
                     </div>
@@ -107,4 +107,13 @@
         </div>
     </form>
 </div>
+@endsection
+@section('main-scripts')
+<script type="text/javascript">
+$(document).ready(function($){
+  $('.date').mask('00/00/0000');
+  $('.phone').mask('(00) 0 0000-0000');
+  $('.cpf').mask('000.000.000-00', {reverse: true});
+});
+</script>
 @endsection

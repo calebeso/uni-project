@@ -107,9 +107,9 @@ class StudentController extends Controller
         $rules = [
             'name' => 'required|max:191',
             'email' => ['required', 'email', 'email', Rule::unique('students')->ignore($student->id), 'max:191'],
-            'cpf' => ['required', Rule::unique('students')->ignore($student->id), 'max:11'],
-            'phone' => 'max:14',
-            'birth_date' => 'required',
+            'cpf' => ['required','cpf', Rule::unique('students')->ignore($student->id), 'max:14'],
+            'phone' => 'max:16',
+            'birth_date' => 'required|date_format:d/m/Y',
         ];
 
 
@@ -120,6 +120,7 @@ class StudentController extends Controller
             'email.max' => 'O campo email deve conter no máximo 191 caractéres',
             'email.email' => 'O campo e-mail deve ser um e-mail válido',
             'email.unique' => 'Este e-mail já existe',
+            'cpf.cpf' => 'Este CPF não é válido',
             'cpf.required' => 'O campo CPF é obrigatório',
             'cpf.unique' => 'Este CPF já existe',
             'cpf.max' => 'O campo CPF deve conter no máximo 11 caractéres',
