@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="uniAmerica" title="#uniAmerica" src="{{ asset('images/unicamerica.png') }}" />
+  <img alt="uniAmerica" title="#uniAmerica" src="public/images/unicamerica.png" />
 </h1>
 
 ## UniAmérica
