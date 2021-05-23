@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-br" dir="ltr">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>UniAmérica | Gestão </title>
+    <title>UniAmérica | Gestão Educacional </title>
 
     <!-- Main Styles -->
     <link type="text/css" href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -25,6 +25,9 @@
     <!-- Datatables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('images/favicon.svg') }}">
 
     @yield('admin-style')
 </head>
