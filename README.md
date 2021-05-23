@@ -11,18 +11,18 @@ Após clonado, ajuste o arquivo .env que será copiado do arquivo .env.example c
 
 Baixe as dependências do sistema através do comando: 
 
-composer install 
+ `composer install`
 
 Gere uma chave para aplicação através do comando: 
 
-php artisan key:generate
+`php artisan key:generate`
 
 Crie a estrutura do banco de dados com os seus devidos dados padrões já populados através do comando: 
 
-php artisan migrate --seed
+`php artisan migrate --seed`
 
 ## Autor
 
-Calebe Santana
+Calebe Santana   
 calebesantana.com.br
 
