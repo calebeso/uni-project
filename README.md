@@ -1,3 +1,7 @@
+<h1 align="center">
+  <img alt="uniAmerica" title="#uniAmerica" src="{{ asset('images/unicamerica.png') }}" />
+</h1>
+
 ## UniAmérica
 
 Projeto de gerenciamento de sistema educacional, sendo possível consultar, cadastrar, editar, visualizar e excluir Usuários, Cursos e Alunos. 
