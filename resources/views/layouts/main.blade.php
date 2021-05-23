@@ -78,7 +78,7 @@
                                     <a class="dropdown-item" href="/"><i class="material-icons">dvr</i> Dashboard</a>
                                     <a class="dropdown-item" href="{{ route('admin.users.edit', Auth::user()->id) }}"><i class="material-icons">account_circle</i> Meu perfil</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="material-icons">exit_to_app</i> Logout</a>
+                                    <a class="dropdown-item" href="{{ route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="material-icons">exit_to_app</i> Sair</a>
 
                                     <form id="logout-form" action="{{ route('logout')}}" method="POST" style="display:none;">
                                         @csrf
@@ -124,76 +124,20 @@
                                                 <span class="sidebar-menu-text">Ver usuários</span>
                                             </a>
                                         </li>
-                                        <li class="sidebar-menu-item">
-                                            <a class="sidebar-menu-button" href="analytics.html">
-                                                <span class="sidebar-menu-text">Analytics</span>
-                                            </a>
-                                        </li>
                                     </ul>
                                 </li>
 
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#apps_menu">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">slideshow</i>
-                                        <span class="sidebar-menu-text">Apps</span>
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
+                                        <span class="sidebar-menu-text">Cursos</span>
                                         <span class="ml-auto sidebar-menu-toggle-icon"></span>
                                     </a>
                                     <ul class="sidebar-submenu collapse" id="apps_menu">
                                         <li class="sidebar-menu-item">
-                                            <a class="sidebar-menu-button" href="app-activities.html">
-                                                <span class="sidebar-menu-text">Activities</span>
+                                            <a class="sidebar-menu-button" href="{{ route('courses.index') }}">
+                                                <span class="sidebar-menu-text">Ver cursos</span>
                                             </a>
-                                        </li>
-                                        <li class="sidebar-menu-item">
-                                            <a class="sidebar-menu-button" href="app-trello.html">
-                                                <span class="sidebar-menu-text">Trello</span>
-                                            </a>
-                                        </li>
-                                        <li class="sidebar-menu-item">
-                                            <a class="sidebar-menu-button" href="app-projects.html">
-                                                <span class="sidebar-menu-text">Projects</span>
-                                            </a>
-                                        </li>
-                                        <li class="sidebar-menu-item">
-                                            <a class="sidebar-menu-button" href="app-fullcalendar.html">
-                                                <span class="sidebar-menu-text">Event Calendar</span>
-                                            </a>
-                                        </li>
-                                        <li class="sidebar-menu-item">
-                                            <a class="sidebar-menu-button" href="app-chat.html">
-                                                <span class="sidebar-menu-text">Chat</span>
-                                            </a>
-                                        </li>
-                                        <li class="sidebar-menu-item">
-                                            <a class="sidebar-menu-button" href="app-email.html">
-                                                <span class="sidebar-menu-text">Email</span>
-                                            </a>
-                                        </li>
-                                        <li class="sidebar-menu-item ">
-                                            <a class="sidebar-menu-button" data-toggle="collapse" href="#course_menu">
-                                                <span class="sidebar-menu-text">Education</span>
-                                                <span class="ml-auto d-flex align-items-center">
-                                                    <span class="badge badge-primary">NEW</span>
-                                                    <span class="sidebar-menu-toggle-icon"></span>
-                                                </span>
-                                            </a>
-                                            <ul class="sidebar-submenu collapse " id="course_menu">
-                                                <li class="sidebar-menu-item ">
-                                                    <a class="sidebar-menu-button" href="app-browse-courses.html">
-                                                        <span class="sidebar-menu-text">Browse Courses</span>
-                                                    </a>
-                                                </li>
-                                                <li class="sidebar-menu-item ">
-                                                    <a class="sidebar-menu-button" href="app-course.html">
-                                                        <span class="sidebar-menu-text">Course</span>
-                                                    </a>
-                                                </li>
-                                                <li class="sidebar-menu-item ">
-                                                    <a class="sidebar-menu-button" href="app-lesson.html">
-                                                        <span class="sidebar-menu-text">Lesson</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </li>
                                     </ul>
                                 </li>

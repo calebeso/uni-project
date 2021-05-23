@@ -43,7 +43,7 @@
         <div class="table-responsive"
              data-toggle="lists"
              data-lists-values='["js-lists-values-employee-name"]'>
-
+             @include('includes.alerts')
             <table class="table mb-0 thead-border-top-0 table-striped" id="user_table">
                 <thead>
                     <tr>

@@ -102,10 +102,3 @@
 </div>
 
 @endsection
-@section('admin-scripts')
-<script type="text/javascript">
-    $(".alert-success, .alert-danger").fadeTo(4000, 500).slideUp(500, function() {
-        $(".alert-success, .alert-danger").slideUp(500);
-    });
-</script>
-@endsection
