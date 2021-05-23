@@ -1,6 +1,5 @@
-<h1 align="center">
-  <img alt="uniAmerica" title="#uniAmerica" src="public/images/unicamerica.png" />
-</h1>
+
+![uniamerica](https://user-images.githubusercontent.com/53923521/119270727-75474d00-bbd4-11eb-9e47-f503c9f2026c.png)
 
 ## UniAmérica
 
@@ -27,6 +26,5 @@ Crie a estrutura do banco de dados com os seus devidos dados padrões já popula
 
 ## Autor
 
-Calebe Santana   
-calebesantana.com.br
+[Calebe Santana](https://calebesantana.com.br)
 
