@@ -1,3 +1,4 @@
+/* Tela de Login */
 .login-signup {
     padding: 120px 0px 60px;
     z-index: 3;
@@ -21,7 +22,7 @@
     font-weight: 700;
     text-transform: uppercase;
     line-height: 40px;
-    color: ##63B446;
+    color: #63B446;
 }
 
 .login-area .header-area .text {
@@ -93,3 +94,35 @@
     position: relative;
     margin-top: -25px;
   }
+
+/* Legandas Status dos Alunos */
+.students-subtitles
+{
+    margin-left: 5px;
+}
+
+
+/* Datatables Stylesheet */
+table{
+    border-bottom: none !important;
+}
+.dataTables_filter {
+    margin-top: 15px !important;
+    margin-right: 20px !important;
+}
+
+.dataTables_filter input {
+    border-radius: 15px !important;
+    margin-left: 10px !important;
+}
+
+.dataTables_filter label {
+    font-weight: 500 !important;
+}
+
+.buttons-excel {
+    margin-top: 15px !important;
+    margin-left: 20px !important;
+    border-radius: 15px !important;
+    background: none !important;
+}

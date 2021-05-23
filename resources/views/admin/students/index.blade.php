@@ -90,8 +90,8 @@
         $('#student_table').DataTable({
             dom: 'Bfrtip',
             buttons: [{
-                text: 'Exportar para CSV',
-                extend: 'csv'
+                text: 'Exportar para Excel',
+                extend: 'excel'
             }],
             "responsive": true,
             "paginate": false,
