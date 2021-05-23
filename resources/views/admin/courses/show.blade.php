@@ -41,10 +41,11 @@
             </div>
         </div>
     </div>
+    @can('is-admin')
     <div class="text-right mb-5">
         <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Deletar Empresa: {{ $course->name }}</button>
     </div>
-
+    @endcan
     @endsection
     <div class="modal modal-danger fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="Delete" aria-hidden="true">
         <div class="modal-dialog" role="document">

@@ -76,7 +76,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="course">Cursos</label>
-                                <select class="form-control" name="course_id" id="course">
+                                <select class="form-control" name="course_id" id="course" required>
                                     <option>Escolha um curso</option>
                                     @foreach($courses as $course)
                                     <option value="{{ $course->id }}"> {{ $course->name }} </option>

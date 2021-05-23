@@ -62,7 +62,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="birth_date">Data de Nascimento</label><br>
-                            <input id="birth_date" readonly type="date" class="form-control-flush" value="{{ $student->birth_date }}">
+                            <input id="birth_date" readonly type="text" class="form-control-flush" value="{{ $student->birth_date }}">
                         </div>
                     </div>
                 </div>
@@ -77,9 +77,11 @@
             </div>
         </div>
     </div>
+    @can('is-admin')
     <div class="text-right mb-5">
         <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Deletar Aluno: {{ $student->name }}</button>
     </div>
+    @endcan
 
     @endsection
     <div class="modal modal-danger fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="Delete" aria-hidden="true">

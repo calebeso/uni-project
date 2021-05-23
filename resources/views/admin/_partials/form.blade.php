@@ -54,14 +54,14 @@
         <div class="col-lg-4 card-body">
             <p><strong class="headings-color">Permissões</strong></p>
             <p class="text-muted">Admin: acesso total ao sistema </p><br>
-            <p class="text-muted"> Basico : consultar e visualizar alunos e cursos</p>
+            <p class="text-muted"> Básico : consultar e visualizar alunos e cursos</p>
         </div>
         <div class="col-lg-8 card-form__body card-body">
             <div class="row">
                 @foreach($roles as $role)
                 <div class="col">
                     <div class="form-group">
-                        <label for="{{ $role->name }}">{{ $role->name }}</label><br>
+                        <label for="{{ $role->name }}">{{ $role->name == "Admin" ? "Administrador" : "Básico"  }}</label><br>
                         <div class="custom-control custom-checkbox-toggle custom-control-inline mr-1">
                             <input type="checkbox" id="{{ $role->name }}" name="roles[]" class="custom-control-input" value="{{ $role->id }}"
                             @isset($user) @if(in_array($role->id, $user->roles->pluck('id')->toArray())) checked @endif @endisset >

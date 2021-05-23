@@ -63,6 +63,7 @@ class StudentController extends Controller
             'cpf' => 'required|cpf|unique:students|max:14',
             'phone' => 'max:16',
             'birth_date' => 'required|date_format:d/m/Y',
+            'course_id' => 'required|numeric',
         ];
 
 
@@ -79,6 +80,7 @@ class StudentController extends Controller
             'cpf.max' => 'O campo CPF deve conter no máximo 11 caractéres',
             'phone.max' => 'O campo telefone deve conter no máximo 14 caractéres',
             'birth_date.required' => 'O campo data de nascimento é obrigatório',
+            'course_id.numeric' => 'Você deve vincular um curso a este aluno',
         ];
 
         $validator = Validator::make($request->all(), $rules, $custom);
@@ -110,6 +112,7 @@ class StudentController extends Controller
             'cpf' => ['required','cpf', Rule::unique('students')->ignore($student->id), 'max:14'],
             'phone' => 'max:16',
             'birth_date' => 'required|date_format:d/m/Y',
+            'course_id' => 'required|numeric',
         ];
 
 
@@ -126,6 +129,7 @@ class StudentController extends Controller
             'cpf.max' => 'O campo CPF deve conter no máximo 11 caractéres',
             'phone.max' => 'O campo telefone deve conter no máximo 14 caractéres',
             'birth_date.required' => 'O campo data de nascimento é obrigatório',
+            'course_id.numeric' => 'Você deve vincular um curso a este aluno',
         ];
 
         $validator = Validator::make($request->all(), $rules, $custom);

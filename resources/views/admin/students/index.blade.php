@@ -34,9 +34,9 @@
                         <th style="width: 30px;" class="text-center">RA</th>
                         <th>Nome</th>
                         <th>E-mail</th>
-                        <th>Celular</th>
-                        <th style="width: 200px;">Status</th>
-                        <th style="width: 200px;">Curso</th>
+                        <th style="width: 200px;">Celular</th>
+                        <th>Status</th>
+                        <th>Curso</th>
                         @can('is-admin')
                         <th style="width: 50px;"></th>
                         @endcan
@@ -59,9 +59,9 @@
                             </div>
                         </td>
                         <td> {{ $student->email }} </td>
-                        <td> {{ $student->phone }} </td>
-                        <td style="width: 200px;">{{ $student->status }} </td>
-                        <td style="width: 200px;">{{ $student->course->name }}</td>
+                        <td  style="width: 200px;"> {{ $student->phone }} </td>
+                        <td>{{ $student->status }} </td>
+                        <td>{{ $student->course->name }}</td>
                         @can('is-admin')
                         <td><a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-link"><i class="material-icons icon-16pt">arrow_forward</i></a> </td>
                         @endcan
