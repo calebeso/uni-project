@@ -14,4 +14,8 @@ class Course extends Model
         'status',
     ];
 
+    public function students()
+    {
+        return $this->hasMany('App\Models\Student');
+    }
 }

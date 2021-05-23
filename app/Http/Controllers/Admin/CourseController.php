@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Student;
 
 class CourseController extends Controller
 {
@@ -120,7 +121,18 @@ class CourseController extends Controller
 
     public function destroy($id)
     {
-        $this->course->find($id)->delete();
+        //Caso contenha algum aluno vinculado ao curso
+        $student = Student::where('course_id', $id)->first();
+
+        if(!empty($student))
+        {
+            return redirect()
+            ->route('courses.index')
+            ->withError('Não é possível excluir um curso vinculado a um aluno!');
+        }else
+        {
+            $this->course->find($id)->delete();
+        }
 
         return redirect(route('courses.index'))->with('status', 'Curso excluído com sucesso!');
     }
