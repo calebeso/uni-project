@@ -1,28 +1,4 @@
 @extends('layouts.main')
-@section('admin-style')
-<style>
-#course_table
-{
-    border-bottom: none;
-}
-
-.dataTables_filter
-{
-    margin-top: 15px !important;
-    margin-right: 20px !important;
-}
-
-.dataTables_filter input
-{
-    border-radius: 15px !important;
-    margin-left: 10px !important;
-}
-.dataTables_filter label
-{
-    font-weight: 500 !important;
-}
-</style>
-@endsection
 @section('content')
 <div class="container-fluid page__heading-container">
     <div class="page__heading d-flex align-items-center">
@@ -36,8 +12,10 @@
             </nav>
             <h1 class="m-0">Cursos</h1>
         </div>
+        @can('is-admin')
         <a href="{{ route('courses.create') }}"
             class="btn btn-success ml-3">Novo <i class="material-icons">add</i></a>
+        @endcan
     </div>
     <div class="card">
         <div class="table-responsive"
@@ -52,9 +30,9 @@
                             class="text-center">#ID</th>
                         <th>Nome</th>
                         <th style="width: 200px;">Status</th>
-                        <th style="width: 50px;">
-
-                      </th>
+                        @can('is-admin')                        
+                        <th style="width: 50px;"></th>
+                        @endcan
                     </tr>
                 </thead>
                 <tbody class="list"
@@ -75,8 +53,10 @@
                             </div>
                         </td>
                         <td style="width: 200px;"><i class="material-icons icon-16pt text-muted-light mr-1">today</i> {{ $course->status == 1 ? "Habilitado" : "Desabilitado" }} </td>
+                        @can('is-admin')
                         <td><a href="{{ route('courses.edit', $course->id) }}"
                                class="btn btn-sm btn-link"><i class="material-icons icon-16pt">arrow_forward</i></a> </td>
+                        @endcan
                     </tr>
                     @empty
                     <tr>
@@ -96,7 +76,7 @@
     </div>
 </div>
 @endsection
-@section('admin-scripts')
+@section('main-scripts')
 <script type="text/javascript">
 $(document).ready( function () {
     $('#course_table').DataTable({

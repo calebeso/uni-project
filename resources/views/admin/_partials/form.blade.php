@@ -77,7 +77,7 @@
         <button type="submit" class="btn btn-success">Enviar</button>
     </div>
 </div>
-    @section('admin-scripts')
+    @section('main-scripts')
     <script type="text/javascript">
         $(".alert-success, .alert-danger").fadeTo(4000, 500).slideUp(500, function() {
             $(".alert-success, .alert-danger").slideUp(500);

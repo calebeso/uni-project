@@ -1,28 +1,4 @@
 @extends('layouts.main')
-@section('admin-style')
-<style>
-#user_table
-{
-    border-bottom: none;
-}
-
-.dataTables_filter
-{
-    margin-top: 15px !important;
-    margin-right: 20px !important;
-}
-
-.dataTables_filter input
-{
-    border-radius: 15px !important;
-    margin-left: 10px !important;
-}
-.dataTables_filter label
-{
-    font-weight: 500 !important;
-}
-</style>
-@endsection
 @section('content')
 <div class="container-fluid page__heading-container">
     <div class="page__heading d-flex align-items-center">
@@ -101,7 +77,7 @@
     </div>
 </div>
 @endsection
-@section('admin-scripts')
+@section('main-scripts')
 <script type="text/javascript">
 $(document).ready( function () {
     $('#user_table').DataTable({

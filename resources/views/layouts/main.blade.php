@@ -24,6 +24,7 @@
 
     <!-- Datatables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
 
     @yield('admin-style')
 </head>
@@ -76,7 +77,9 @@
                                     </div>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/"><i class="material-icons">dvr</i> Dashboard</a>
+                                    @can('is-admin')
                                     <a class="dropdown-item" href="{{ route('admin.users.edit', Auth::user()->id) }}"><i class="material-icons">account_circle</i> Meu perfil</a>
+                                    @endcan
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="material-icons">exit_to_app</i> Sair</a>
 
@@ -112,6 +115,7 @@
                         <div class="sidebar sidebar-light sidebar-left sidebar-p-t" data-perfect-scrollbar>
                             <div class="sidebar-heading">Menu</div>
                             <ul class="sidebar-menu">
+                                @can('is-admin')
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#dashboards_menu">
                                         <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person</i>
@@ -126,10 +130,10 @@
                                         </li>
                                     </ul>
                                 </li>
-
+                                @endcan
                                 <li class="sidebar-menu-item">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#apps_menu">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">description</i>
                                         <span class="sidebar-menu-text">Cursos</span>
                                         <span class="ml-auto sidebar-menu-toggle-icon"></span>
                                     </a>
@@ -144,17 +148,26 @@
 
                                 <li class="sidebar-menu-item active open">
                                     <a class="sidebar-menu-button" data-toggle="collapse" href="#pages_menu">
-                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">description</i>
-                                        <span class="sidebar-menu-text">Pages</span>
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i>
+                                        <span class="sidebar-menu-text">Alunos</span>
                                         <span class="ml-auto sidebar-menu-toggle-icon"></span>
                                     </a>
                                     <ul class="sidebar-submenu collapse show " id="pages_menu">
                                         <li class="sidebar-menu-item">
-                                            <a class="sidebar-menu-button" href="companies.html">
-                                                <span class="sidebar-menu-text">Companies</span>
+                                            <a class="sidebar-menu-button" href="{{ route('students.index') }}">
+                                                <span class="sidebar-menu-text">Ver alunos</span>
                                             </a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button" data-toggle="collapse" href="{{ route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">exit_to_app</i>
+                                        <span class="sidebar-menu-text">Sair</span>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout')}}" method="POST" style="display:none;">
+                                        @csrf
+                                    </form>
                                 </li>
                             </ul>
                         </div>
@@ -200,8 +213,6 @@
         @endunless
     </div>
 
-    </div>
-
     <!-- Jquery -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
 
@@ -209,8 +220,16 @@
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
+    <!-- JqueryMask by Igor Escobar --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <!-- Datatables -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
 
     <!-- Perfect Scrollbar -->
     <script src="{{ asset('js/perfect-scrollbar.min.js') }}"></script>
@@ -229,5 +248,5 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 
-    @yield('admin-scripts')
+    @yield('main-scripts')
 </body>

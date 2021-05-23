@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    @section('admin-scripts')
+    @section('main-scripts')
     <script type="text/javascript">
         $(document).on('click', '.delete', function() {
             let id = $(this).attr('data-id');
